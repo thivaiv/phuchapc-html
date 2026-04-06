@@ -1,5 +1,14 @@
 h1 {
-  color: blueviolet;
+  color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 2px;
+  text-shadow:
+    -2px 2px red,
+    -4px 4px orange,
+    -6px 6px yellow,
+    -8px 8px green,
+    -10px 10px cyan;
+}
+body {
+  background-color: lightslategray;
 }
