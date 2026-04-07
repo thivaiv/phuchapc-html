@@ -32,6 +32,7 @@ h1 {
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 2px;
+  box-sizing: border-box;
   background: linear-gradient(
     to right,
     red,
@@ -67,7 +68,6 @@ img {
 }
 
 body {
-  transform: scale(1.2);
-  transform-origin: top center;
+  zoom: 150%;
   background-color: #ccbeb1;
 }
