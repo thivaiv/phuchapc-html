@@ -1,4 +1,6 @@
 h1 {
+  border-style: ridge;
+  border-radius: 10px;
   text-align: center;
   display: block;
   color: white;
@@ -39,5 +41,5 @@ img {
 }
 
 body {
-  background-color: gray;
+  background-color: #ccbeb1;
 }
