@@ -34,7 +34,7 @@ li {
   text-align: center;
 }
 img {
-  clip-path: circle();
+  border-radius: 30%;
   display: block;
   margin: 0 auto;
 }
