@@ -1,3 +1,29 @@
+.navigate {
+  border-radius: 5px;
+  padding: 2px;
+  background: slateblue;
+  text-decoration: none;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.link_fb {
+  border-radius: 5px;
+  padding: 2px;
+  background: whitesmoke;
+  display: inline-block;
+  color: purple;
+  text-align: center;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.font {
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: wavy;
+  color: brown;
+}
+
 h1 {
   border-style: ridge;
   border-radius: 10px;
