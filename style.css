@@ -67,6 +67,7 @@ img {
 }
 
 body {
-  zoom: 150%;
+  transform: scale(1.5);
+  transform-origin: top center;
   background-color: #ccbeb1;
 }
