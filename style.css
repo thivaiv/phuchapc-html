@@ -77,7 +77,6 @@ ALBUM*/
 /* Container chính */
 .gallery-container {
   column-count: 2;
-  column-gap:;
   /* Tự động chia cột: tối thiểu 250px, tối đa chiếm hết khoảng trống */
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-gap: 15px; /* Khoảng cách giữa các ảnh */
@@ -118,13 +117,14 @@ ALBUM*/
 
 /* Cho máy tính bảng (màn hình rộng hơn 600px) */
 @media (min-width: 600px) {
-    .gallery-container {
-        column-count: 2;
-    }
+  .gallery-container {
+    column-count: 2;
+  }
 }
 
 /* Cho máy tính để bàn (màn hình rộng hơn 1000px) */
 @media (min-width: 1000px) {
-    .gallery-container {
-        column-count: 4;
-    }
+  .gallery-container {
+    column-count: 4;
+  }
+}
