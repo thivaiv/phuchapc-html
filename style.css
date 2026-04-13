@@ -71,25 +71,31 @@ body {
   zoom: 150%;
   background-color: #ccbeb1;
 }
-/*===================================================*/
+/*===================================================
+ALBUM*/
 
 /* Container chính */
 .gallery-container {
-  display: grid;
+  column-count: 2;
+  column-gap:;
   /* Tự động chia cột: tối thiểu 250px, tối đa chiếm hết khoảng trống */
-  grid-template-columns: repeat(auto-fit, minmax(200px));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-gap: 15px; /* Khoảng cách giữa các ảnh */
-  padding: 20px;
+  padding: 10px;
+  align-items: start;
+  grid-template-rows: masonry;
 }
 
 /* Item chứa ảnh */
 .gallery-item {
-  display: flex;
+  display: inline-block;
   height: auto;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  break-inside: avoid;
+  margin-bottom: 15px;
 }
 
 /* Định dạng ảnh để không bị méo */
@@ -109,3 +115,16 @@ body {
 .gallery-item:hover img {
   transform: scale(1.1); /* Phóng to ảnh bên trong */
 }
+
+/* Cho máy tính bảng (màn hình rộng hơn 600px) */
+@media (min-width: 600px) {
+    .gallery-container {
+        column-count: 2;
+    }
+}
+
+/* Cho máy tính để bàn (màn hình rộng hơn 1000px) */
+@media (min-width: 1000px) {
+    .gallery-container {
+        column-count: 4;
+    }
