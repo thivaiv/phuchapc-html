@@ -55,21 +55,21 @@ document.addEventListener("DOMContentLoaded", function () {
     osc.stop(ctx.currentTime + duration);
   }
 
-  // hiệu ứng troll gáy
+  // hiệu ứng cười vui
   function playCrowSound() {
     const ctx = getAudioContext();
     if (!ctx) return;
-    const notes = [300, 420, 560, 720, 950];
+    const notes = [350, 440, 580, 700, 880];
     notes.forEach((freq, idx) => {
       setTimeout(() => {
-        playTone(freq, 0.18, "sawtooth");
-      }, idx * 100);
+        playTone(freq, 0.16, "triangle");
+      }, idx * 90);
     });
   }
 
   // hiệu ứng tít tít máy quét
   function playScanSound() {
-    playTone(880, 0.08, "square");
+    playTone(880, 0.08, "sine");
   }
 
   // hiệu ứng thành công
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   window.showToast = showToast;
 
-  // tính năng máy đo độ gay
+  // tính năng máy đo độ lầy lội và dễ thương
   const btnScanGay = document.getElementById("btnScanGay");
   const gayProgressBar = document.getElementById("gayProgressBar");
   const gayResultText = document.getElementById("gayResultText");
@@ -114,9 +114,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (scanning) return;
       scanning = true;
       btnScanGay.disabled = true;
-      btnScanGay.textContent = "Đang quét ADN... ⏳";
+      btnScanGay.textContent = "Đang quét tín hiệu... ⏳";
       gayProgressBar.style.width = "0%";
-      gayResultText.textContent = "Hệ thống đang phân tích tín hiệu bê đê...";
+      gayResultText.textContent = "Hệ thống đang đo đạc chỉ số cute...";
 
       let step = 0;
       const totalSteps = 20;
@@ -132,44 +132,44 @@ document.addEventListener("DOMContentLoaded", function () {
           btnScanGay.disabled = false;
           btnScanGay.textContent = "Quét lại phát nữa 🔄";
           playSuccessSound();
-          gayResultText.innerHTML = `Kết quả: <b style="color: #ff007f; font-size: 1.2rem;">100% Gay Siêu Cấp Vip Pro</b> 🏳️‍🌈 (kết quả chuẩn 100%)`;
-          showToast("Đã phân tích xong: Nồng độ gay đạt cực đại!");
+          gayResultText.innerHTML = `Kết quả: <b style="color: #ff007f; font-size: 1.2rem;">100% Lầy Lội & Dễ Thương</b> ✨ (kết quả chuẩn 100%)`;
+          showToast("Đã phân tích xong: Năng lượng vui vẻ đạt mức tối đa!");
         }
       }, 70);
     });
   }
 
-  // nút troll: donate bỉm
+  // nút troll: donate trà sữa dỗ dành
   const btnDonateBim = document.getElementById("btnDonateBim");
   if (btnDonateBim) {
-    let bimCount = parseInt(localStorage.getItem("phucha_bim_count") || "0", 10);
+    let teaCount = parseInt(localStorage.getItem("phucha_tea_count") || "0", 10);
     btnDonateBim.addEventListener("click", () => {
-      bimCount++;
-      localStorage.setItem("phucha_bim_count", bimCount);
+      teaCount++;
+      localStorage.setItem("phucha_tea_count", teaCount);
       playTone(600, 0.15, "triangle");
-      showToast(`🍼 Đã donate 1 bịch bỉm cho Hà! (Tổng cộng: ${bimCount} bịch)`);
+      showToast(`🧋 Đã donate 1 ly trà sữa cho Hà nín khóc! (Tổng: ${teaCount} ly)`);
     });
   }
 
-  // nút troll: tố cáo
+  // nút troll: gửi lời xin lỗi
   const btnReport = document.getElementById("btnReport");
   if (btnReport) {
     btnReport.addEventListener("click", () => {
-      playTone(220, 0.35, "sawtooth");
-      showToast("🚨 Đơn tố cáo đã gửi tới FBI và Hội bảo vệ chim thế giới!");
+      playSuccessSound();
+      showToast("💌 Đã gửi lời xin lỗi chân thành: Mãi là anh em tốt của nhau nhé!");
     });
   }
 
-  // nút troll: nghe tiếng gáy
+  // nút troll: nghe tiếng cười
   const btnCrow = document.getElementById("btnCrow");
   if (btnCrow) {
     btnCrow.addEventListener("click", () => {
       playCrowSound();
-      showToast("🔊 Nguyễn Phúc Hà vừa gáy ó ó ó!");
+      showToast("🔊 Nguyễn Phúc Hà vừa cười toe toét rồi kìa!");
     });
   }
 
-  // nút troll: copy link dìm hàng
+  // nút troll: copy link chia sẻ
   const btnShare = document.getElementById("btnShare");
   if (btnShare) {
     btnShare.addEventListener("click", () => {
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(() => {
           playSuccessSound();
-          showToast("📋 Đã sao chép link! Mau gửi vào group chat bóc phốt 😆");
+          showToast("📋 Đã sao chép link! Gửi ngay để rủ anh em vào làm hòa nhé 😆");
         }).catch(() => {
           showToast("Link trang: " + url);
         });
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const img = item.querySelector("img");
       return {
         src: img ? img.getAttribute("src") : "",
-        alt: img ? (img.getAttribute("alt") || "Ảnh tư liệu") : "Ảnh tư liệu"
+        alt: img ? (img.getAttribute("alt") || "Ảnh kỷ niệm") : "Ảnh kỷ niệm"
       };
     });
 
