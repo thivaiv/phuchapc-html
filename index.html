@@ -1,64 +1,112 @@
 <!doctype html>
 <html lang="vi">
   <head>
-    <link rel="icon" href="https://vi.wikipedia.org/static/favicon/wikipedia.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
-    <title>Sông Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sông Archive - NgPhucHa News</title>
+    <!-- biểu tượng trang web -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌈</text></svg>" />
+    <!-- nạp tập tin style css -->
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <h1>
-      <a style="color: white; font-size: 5vw" href=javascript:location.replace('index.html')"
-        >NgPhucHa News&copy
-      </a>
-    </h1>
-    <p></p>
+    <div class="container">
+      <!-- phần đầu trang với tiêu đề cầu vồng thương hiệu -->
+      <header class="site-header">
+        <a class="rainbow-title" href="index.html">NgPhucHa News&copy;</a>
+      </header>
 
-    <table style="border-collapse: separate; border-spacing: 10px 5px">
-      <tr>
-        <th>
-          <a class="navigate" href=javascript:location.replace('index.html');>Home</a>
-        </th>
-        <th>
-          <a class="navigate" href=javascript:location.replace('album.html');>Album</a>
-        </th>
-      </tr>
-    </table>
+      <!-- thanh điều hướng hiện đại và nút đổi màu nền -->
+      <nav class="nav-bar">
+        <a class="nav-link active" href="index.html">🏠 Trang chủ</a>
+        <a class="nav-link" href="album.html">📸 Bộ sưu tập Album</a>
+        <button id="themeToggleBtn" class="btn-theme-toggle" type="button">🌙 Tối</button>
+      </nav>
 
-    <hr />
-    <h2 class="font">Gay</h2>
-    <p>
-      (tin chuẩn).<br />
-      tin thật sự chuẩn.
-    </p>
-    <hr />
-    <h2 class="font">Nguyễn Phúc Hà</h2>
-    <div class="wrapper">
-      <li>Bê đê 🏳️‍🌈</li>
-      <li>Chim bé.</li>
-      <li>Chim bé.</li>
-      <li>Chim bé.</li>
+      <!-- thẻ tin tức nóng hổi -->
+      <main>
+        <section class="card">
+          <h2 class="section-title">🚨 Tin Nóng Hổi Trong Ngày</h2>
+          <span class="badge-tag">TIN XÁC THỰC 100%</span>
+          <p style="margin-top: 12px; font-size: 1.15rem; font-weight: 700; color: #e11d48">
+            (Tin chuẩn không cần chỉnh).<br />
+            Tin thật sự chuẩn, được bộ phận kiểm duyệt phê duyệt!
+          </p>
+        </section>
+
+        <!-- thẻ hồ sơ lý lịch nhân vật -->
+        <section class="card">
+          <h2 class="section-title">👤 Đối Tượng: Nguyễn Phúc Hà</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem">
+            Hồ sơ đặc điểm nhận dạng chi tiết được lưu trữ tại Sông Archive
+          </p>
+
+          <ul class="trait-list">
+            <li class="trait-item">🏳️‍🌈 Giới tính: Bê đê chính hiệu</li>
+            <li class="trait-item">📏 Kích thước: Chim bé.</li>
+            <li class="trait-item">🔍 Kiểm chứng lần 2: Chim bé.</li>
+            <li class="trait-item">🔬 Xét nghiệm viện Pasteur: Vẫn là chim bé.</li>
+          </ul>
+
+          <div style="margin-top: 16px">
+            <a
+              class="btn-facebook"
+              href="https://www.facebook.com/ha.nguyenphuc.54"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🌐 Xem hồ sơ Facebook chính chủ
+            </a>
+          </div>
+        </section>
+
+        <!-- thẻ chân dung nhận diện -->
+        <section class="card">
+          <h2 class="section-title">📸 Ảnh Chân Dung Nhận Diện</h2>
+          <div class="avatar-wrapper">
+            <img
+              class="avatar-img"
+              src="assets/645406175_1589189469019881_3738506470435019366_n.jpg"
+              alt="ảnh chân dung nhận diện"
+              loading="lazy"
+            />
+          </div>
+          <p class="avatar-caption">Trông giống súc vật ^ (ảnh tư liệu quý hiếm năm 2024)</p>
+        </section>
+
+        <!-- thẻ tương tác máy quét độ gay -->
+        <section class="card">
+          <h2 class="section-title">⚡ Máy Quét Sinh Trắc Học Độc Quyền</h2>
+          <div class="gay-meter-box">
+            <p style="font-weight: 700; font-size: 1.05rem">Máy Phân Tích Nồng Độ Bê Đê Của Hà</p>
+            <div class="progress-track">
+              <div id="gayProgressBar" class="progress-fill"></div>
+            </div>
+            <div id="gayResultText" class="meter-score">0%</div>
+            <button id="btnScanGay" class="btn-troll" type="button">🚀 Bắt đầu quét ngay</button>
+          </div>
+        </section>
+
+        <!-- khu vực nút tương tác troll bạn bè -->
+        <section class="card">
+          <h2 class="section-title">🎉 Khu Vực Tương Tác Cực Troll</h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem">Hãy bày tỏ tình cảm của bạn dành cho Phúc Hà</p>
+          <div class="action-buttons">
+            <button id="btnDonateBim" class="btn-troll" type="button">🍼 Donate 1 bịch bỉm</button>
+            <button id="btnCrow" class="btn-troll" type="button">🔊 Bấm để nghe Hà gáy</button>
+            <button id="btnReport" class="btn-troll btn-secondary" type="button">🚨 Báo cáo vi phạm</button>
+            <button id="btnShare" class="btn-troll btn-secondary" type="button">📋 Sao chép link bóc phốt</button>
+          </div>
+        </section>
+      </main>
+
+      <!-- chân trang bản quyền vui nhộn -->
+      <footer class="site-footer">
+        <p>© 2026 Sông Archive &bull; Dự án bảo tồn tư liệu Nguyễn Phúc Hà &bull; All meme reserved</p>
+      </footer>
     </div>
-    <hr />
-    <h2 class="font">Nguyễn Phúc Hà</h2>
-    <div style="text-align: center">
-      <a
-        class="link_fb" target="_blank"
-        href="https://www.facebook.com/ha.nguyenphuc.54"
-        target="_blank"
-      >
-        *Nhận diện (link facebook)*
-      </a>
-    </div>
-    <p></p>
-    <img
-      style="border-radius: 30%"
-      src="assets\645406175_1589189469019881_3738506470435019366_n.jpg"
-      alt="ảnh chó"
-      width="190px"
-    />
-    <p>trông giống súc vật ^</p>
+
+    <!-- nạp kịch bản javascript tương tác -->
+    <script src="script.js"></script>
   </body>
 </html>

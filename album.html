@@ -1,60 +1,152 @@
 <!doctype html>
 <html lang="vi">
   <head>
-    <link rel="icon" href="https://vi.wikipedia.org/static/favicon/wikipedia.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
-    <title>Sông Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Album Ảnh - Sông Archive</title>
+    <!-- biểu tượng trang web -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📸</text></svg>" />
+    <!-- nạp tập tin style css -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>
-      <a style="color: white; font-size: 5vw" href="index.html"
-        >NgPhucHa News&copy
-      </a>
-    </h1>
-    <p></p>
-    <table style="border-collapse: separate; border-spacing: 10px 5px">
-      <tr>
-        <th>
-          <a class="navigate" href=javascript:location.replace('index.html');>Home</a>
-        </th>
-        <th>
-          <a class="navigate" href=javascript:location.replace('album.html');>Album</a>
-        </th>
-      </tr>
-    </table>
-    <hr />
+    <div class="container">
+      <!-- phần đầu trang với tiêu đề cầu vồng thương hiệu -->
+      <header class="site-header">
+        <a class="rainbow-title" href="index.html">NgPhucHa News&copy;</a>
+      </header>
 
-    <div class="gallery-container">
-  <div class="gallery-item">
-    <img src="assets/1.jpg" alt="Ảnh 1">
-  </div>
-  <div class="gallery-item">
-    <img src="assets/2.jpg" alt="Ảnh 2">
-  </div>
-  <div class="gallery-item">
-    <img src="assets/9.jpg" alt="Ảnh 3">
-  </div>
-  <div class="gallery-item">
-    <img src="assets/4.jpg" alt="Ảnh 4">
-  </div>
-  <div class="gallery-item">
-    <img src="assets/7.jpg" alt="Ảnh 5">
-  </div>
-  <div class="gallery-item">
-    <img src="assets/6.jpg" alt="Ảnh 6">
-  </div>
-  <div class="gallery-item">
-    <img src="assets/5.jpg" alt="Ảnh 7">
-  </div>
-  <div class="gallery-item">
-    <img src="assets/8.jpg" alt="Ảnh 8">
-  </div>
-  <div class="gallery-item">
-    <img src="assets/3.jpg" alt="Ảnh 9">
-  </div>
-</div>
+      <!-- thanh điều hướng hiện đại và nút đổi màu nền -->
+      <nav class="nav-bar">
+        <a class="nav-link" href="index.html">🏠 Trang chủ</a>
+        <a class="nav-link active" href="album.html">📸 Bộ sưu tập Album</a>
+        <button id="themeToggleBtn" class="btn-theme-toggle" type="button">🌙 Tối</button>
+      </nav>
 
+      <main>
+        <!-- phần tiêu đề album và các nút thao tác nhanh -->
+        <div class="gallery-header">
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 800; color: #a83232;">🖼️ Kho Tư Liệu Sống Động</h2>
+            <p class="gallery-count">Đang hiển thị đủ 15 / 15 kiệt tác nghệ thuật của Nguyễn Phúc Hà</p>
+          </div>
+          <div>
+            <button id="btnRandomPic" class="btn-troll" type="button">🎲 Bốc quẻ ảnh ngẫu nhiên</button>
+          </div>
+        </div>
+
+        <!-- danh sách các hình ảnh trong bộ sưu tập -->
+        <div class="gallery-container">
+          <div class="gallery-item">
+            <span class="gallery-badge">#01</span>
+            <img src="assets/1.jpg" alt="Tác phẩm số 01" loading="lazy" />
+            <div class="gallery-overlay-hint">🔍 Nhấn để phóng to</div>
+          </div>
+
+          <div class="gallery-item">
+            <span class="gallery-badge">#02</span>
+            <img src="assets/2.jpg" alt="Tác phẩm số 02" loading="lazy" />
+            <div class="gallery-overlay-hint">🔍 Nhấn để phóng to</div>
+          </div>
+
+          <div class="gallery-item">
+            <span class="gallery-badge">#03</span>
+            <img src="assets/3.jpg" alt="Tác phẩm số 03" loading="lazy" />
+            <div class="gallery-overlay-hint">🔍 Nhấn để phóng to</div>
+          </div>
+
+          <div class="gallery-item">
+            <span class="gallery-badge">#04</span>
+            <img src="assets/4.jpg" alt="Tác phẩm số 04" loading="lazy" />
+            <div class="gallery-overlay-hint">🔍 Nhấn để phóng to</div>
+          </div>
+
+          <div class="gallery-item">
+            <span class="gallery-badge">#05</span>
+            <img src="assets/5.jpg" alt="Tác phẩm số 05" loading="lazy" />
+            <div class="gallery-overlay-hint">🔍 Nhấn để phóng to</div>
+          </div>
+
+          <div class="gallery-item">
+            <span class="gallery-badge">#06</span>
+            <img src="assets/6.jpg" alt="Tác phẩm số 06" loading="lazy" />
+            <div class="gallery-overlay-hint">🔍 Nhấn để phóng to</div>
+          </div>
+
+          <div class="gallery-item">
+            <span class="gallery-badge">#07</span>
+            <img src="assets/7.jpg" alt="Tác phẩm số 07" loading="lazy" />
+            <div class="gallery-overlay-hint">🔍 Nhấn để phóng to</div>
+          </div>
+
+          <div class="gallery-item">
+            <span class="gallery-badge">#08</span>
+            <img src="assets/8.jpg" alt="Tác phẩm số 08" loading="lazy" />
+            <div class="gallery-overlay-hint">🔍 Nhấn để phóng to</div>
+          </div>
+
+          <div class="gallery-item">
+            <span class="gallery-badge">#09</span>
+            <img src="assets/9.jpg" alt="Tác phẩm số 09" loading="lazy" />
+            <div class="gallery-overlay-hint">🔍 Nhấn để phóng to</div>
+          </div>
+
+          <div class="gallery-item">
+            <span class="gallery-badge">#10</span>
+            <img src="assets/10.jpg" alt="Tác phẩm số 10" loading="lazy" />
+            <div class="gallery-overlay-hint">🔍 Nhấn để phóng to</div>
+          </div>
+
+          <div class="gallery-item">
+            <span class="gallery-badge">#11</span>
+            <img src="assets/11.jpg" alt="Tác phẩm số 11" loading="lazy" />
+            <div class="gallery-overlay-hint">🔍 Nhấn để phóng to</div>
+          </div>
+
+          <div class="gallery-item">
+            <span class="gallery-badge">#12</span>
+            <img src="assets/12.jpg" alt="Tác phẩm số 12" loading="lazy" />
+            <div class="gallery-overlay-hint">🔍 Nhấn để phóng to</div>
+          </div>
+
+          <div class="gallery-item">
+            <span class="gallery-badge">#13</span>
+            <img src="assets/13.jpg" alt="Tác phẩm số 13" loading="lazy" />
+            <div class="gallery-overlay-hint">🔍 Nhấn để phóng to</div>
+          </div>
+
+          <div class="gallery-item">
+            <span class="gallery-badge">#14</span>
+            <img src="assets/14.jpg" alt="Tác phẩm số 14" loading="lazy" />
+            <div class="gallery-overlay-hint">🔍 Nhấn để phóng to</div>
+          </div>
+
+          <div class="gallery-item">
+            <span class="gallery-badge">#15</span>
+            <img src="assets/15.jpg" alt="Tác phẩm số 15" loading="lazy" />
+            <div class="gallery-overlay-hint">🔍 Nhấn để phóng to</div>
+          </div>
+        </div>
+      </main>
+
+      <!-- chân trang bản quyền -->
+      <footer class="site-footer">
+        <p>© 2026 Sông Archive &bull; Dự án bảo tồn tư liệu Nguyễn Phúc Hà &bull; All meme reserved</p>
+      </footer>
+    </div>
+
+    <!-- hộp thoại lightbox để xem ảnh toàn màn hình -->
+    <div id="lightboxModal" class="lightbox-modal">
+      <button id="lightboxClose" class="lightbox-btn lightbox-close" type="button" aria-label="Đóng">&times;</button>
+      <button id="lightboxPrev" class="lightbox-btn lightbox-prev" type="button" aria-label="Ảnh trước">&#10094;</button>
+      <button id="lightboxNext" class="lightbox-btn lightbox-next" type="button" aria-label="Ảnh kế tiếp">&#10095;</button>
+      <div class="lightbox-content">
+        <img id="lightboxImg" class="lightbox-img" src="" alt="Ảnh xem phóng to" />
+        <div id="lightboxCaption" class="lightbox-caption"></div>
+      </div>
+    </div>
+
+    <!-- nạp mã javascript tương tác -->
+    <script src="script.js"></script>
   </body>
 </html>
